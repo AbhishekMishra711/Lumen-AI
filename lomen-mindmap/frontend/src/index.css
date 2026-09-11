@@ -1,0 +1,18 @@
+:root {
+  --bg-color: #15171A;
+  --text-color: #ffffff;
+  --border-color: #2a2d35;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}

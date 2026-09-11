@@ -1,0 +1,40 @@
+@import "tailwindcss";
+@import "@xyflow/react/dist/style.css";
+
+@theme inline {
+  --font-press-start-2p: var(--font-press-start-2p);
+  --font-space-mono: var(--font-space-mono);
+  --color-lumen-yellow: #FFCC00;
+  --color-lumen-black: #000000;
+  --color-lumen-orange: #FF4F00;
+  --color-lumen-magenta: #FF00FF;
+  --color-lumen-cyan: #00FFFF;
+  --color-lumen-lime: #39FF14;
+}
+
+/* Fallback & Custom Brutalist Utility Classes */
+.bg-lumen-black { background-color: #000000 !important; }
+.text-lumen-black { color: #000000 !important; }
+.border-lumen-black { border-color: #000000 !important; }
+.bg-lumen-yellow { background-color: #FFCC00 !important; }
+.text-lumen-yellow { color: #FFCC00 !important; }
+.border-lumen-yellow { border-color: #FFCC00 !important; }
+.shadow-brutalist { box-shadow: 4px 4px 0px 0px #000000; }
+.shadow-brutalist-lg { box-shadow: 8px 8px 0px 0px #000000; }
+.border-3 { border-width: 3px; }
+
+
+body {
+  background: #ffcc00;
+  color: #000000;
+  font-family: var(--font-space-mono), monospace;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><rect x="0" y="0" width="2" height="2" fill="%23000000"/><rect x="14" y="0" width="2" height="2" fill="%23000000"/><rect x="0" y="14" width="2" height="2" fill="%23000000"/><rect x="14" y="14" width="2" height="2" fill="%23000000"/><rect x="6" y="7" width="4" height="2" fill="%23000000"/><rect x="7" y="6" width="2" height="4" fill="%23000000"/></svg>') 8 8, auto;
+}
+
+img.pixelated,
+svg.pixelated,
+div.pixelated {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
