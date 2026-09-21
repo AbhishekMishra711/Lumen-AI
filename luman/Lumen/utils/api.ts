@@ -3,7 +3,7 @@
  */
 
 export const BACKEND_URL =
-  process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000";
+  process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5001";
 
 /**
  * Resolve current logged in user directly from browser cookies

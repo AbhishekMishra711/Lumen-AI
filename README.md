@@ -3,13 +3,13 @@
 <div align="center">
 
 ![Lumen Banner](https://img.shields.io/badge/LUMEN-AI%20Cognitive%20Engine-FFCC00?style=for-the-badge&logo=openai&logoColor=black)
-![Next.js 15](https://img.shields.io/badge/Next.js%2015-React%2019-000000?style=for-the-badge&logo=next.js&logoColor=white)
+![Next.js 16](https://img.shields.io/badge/Next.js%2016-React%2019-000000?style=for-the-badge&logo=next.js&logoColor=white)
 ![Sarvam AI](https://img.shields.io/badge/Sarvam%20AI-105B%20Conversations-FF4F00?style=for-the-badge&logo=probot&logoColor=white)
 ![MongoDB Atlas](https://img.shields.io/badge/MongoDB-Atlas%20Cloud-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Design](https://img.shields.io/badge/Design-Neo--Brutalist-39FF14?style=for-the-badge)
 
-**Transform dense textbooks, lecture videos, and messy notes into interactive visual knowledge graphs, spaced-repetition flashcards, adaptive quizzes, and 10-level video-gamified boss battles.**
+**Transform dense textbooks, lecture videos, and messy notes into interactive visual knowledge graphs, spaced-repetition flashcards, adaptive quizzes, and gamified learning experiences.**
 
 [Explore Features](#-key-features) • [System Architecture](#-system-architecture) • [Quick Start](#-quick-start) • [API Reference](#-api-endpoints) • [Design System](#-design-system--philosophy)
 
@@ -23,38 +23,38 @@ Modern students, competitive exam aspirants (GATE, JEE, UPSC, GRE), and engineer
 
 **LUMEN** changes the paradigm by replacing passive cramming with an **Autonomous Cognitive Arena**:
 1. **Multi-Modal Ingestion**: Upload multi-page PDFs, YouTube lecture links, or raw notes.
-2. **Instant Cognitive Graphing & Testing**: Automatically synthesize hierarchical React Flow Mind Maps, smart Flashcard decks, and 5-to-20 question MCQ drills.
-3. **Memory Museum (The USP)**: Battle through 10 progressive villain chambers where concept retention directly dictates video game combat outcomes with frame-accurate video cinematics.
-4. **Actionable Diagnostics**: Track streaks and learning events on a GitHub-style 112-day contribution heatmap with personalized AI-identified strengths and weaknesses.
+2. **Instant Cognitive Graphing & Testing**: Automatically synthesize hierarchical React Flow Mind Maps, smart Flashcard decks, and 5-question MCQ drills.
+3. **Memory Palace**: Interactive gamified learning experience with real-time RPG-style gameplay where concept retention directly dictates combat outcomes.
+4. **Actionable Diagnostics**: Track streaks and learning events with personalized AI-identified strengths and weaknesses.
 
 ---
 
 ## 🚀 Key Features
 
 ### 1. 🧠 Top Bar AI Cognitive Prompt (`Sarvam AI 105B`)
-* **Instant Q&A Mentor**: Sub-1.5s real-time academic explanations powered by `sarvam-105b-conversations`.
+* **Instant Q&A Mentor**: Real-time academic explanations powered by `sarvam-105b-conversations`.
 * **High-Yield Formatting**: Auto-highlights key technical terms, displays Coffman conditions, OS paging, ML optimization, etc.
-* **1-Click Study Bridges**: Directly launch a tailored Quiz or enter the Memory Museum from the AI's answer.
+* **1-Click Study Bridges**: Directly launch a tailored Quiz or enter the Memory Palace from the AI's answer.
 
-### 2. ⚔️ Memory Museum — 10-Level Gamified Boss Combat Arena
-* **Progressive Concept Conquest**: The material is segmented into 10 escalating chambers.
-* **Two-Phase Duel**:
-  * **Teach Phase**: High-yield conceptual briefing by the LLM.
-  * **Combat Phase**: Face off in a 5-MCQ duel against the chamber's villain.
-* **Cinematic Video Mechanics**:
-  * Video assets (`hv1.mp4`–`hv9.mp4`, `vh1.mp4`–`vh10.mp4`, `10finalboss.mp4`) are paused on frame 0 during combat.
-  * Answering $\ge 3$ correct triggers the hero's victory cinematic and advances to the next chamber.
-  * Answering $\le 2$ correct plays the defeat cinematic and prompts targeted review.
-* **Battle Archives**: Every game attempt, chamber progression, and pedagogical diagnostic report is persisted in MongoDB Atlas.
+### 2. ⚔️ Memory Palace — Interactive Gamified Learning Experience
+* **Dynamic Content Generation**: Accepts text topics, YouTube URLs, or PDF uploads to generate interactive learning content.
+* **Two-Phase Learning**:
+  * **Exploration Phase**: Learn key concepts with detailed explanations and bullet points.
+  * **Combat Phase**: Test knowledge with interactive quiz questions against virtual enemies.
+* **Game Mechanics**:
+  * Real-time canvas-based RPG-style gameplay with player movement and combat.
+  * Health/mana systems, projectile attacks, and particle effects.
+  * Progressive difficulty with enemy types (ghost, demon, dragon, boss).
+* **Adaptive Learning**: Uses Sarvam AI to generate context-aware concepts and questions based on input material.
 
 ### 3. 🗺️ Interactive Mind Map Engine (`React Flow`)
 * **Visual Graph Extraction**: Generates interactive, zoomable, draggable, hierarchical concept trees.
 * **Color-Coded Semantic Depth**: Categorizes concepts into Core Fundamentals, Architectural Sub-nodes, and Detailed Mechanics.
 * **PDF & Notes Parser**: Ingests multi-page academic papers, syllabi, and technical documentation via `pdf-parse`.
 
-### 4. 🎯 Multi-Modal AI Quiz Arena
-* **Flexible Volume Selector**: Custom configure quizzes from **5 to 20 MCQs**.
-* **Triple Ingestion**: Supports YouTube URLs, PDF uploads, and custom text prompts.
+### 4. 🎯 AI Quiz Arena
+* **Topic-Based Generation**: Generate 5 MCQs from text topics using Sarvam AI.
+* **Flexible Input**: Supports custom text prompts for quiz generation.
 * **Personalized AI Guidance**: Evaluates performance post-quiz and highlights:
   * 🏆 Mastered concepts & strengths.
   * ⚠️ Blindspots & conceptual gaps.
@@ -65,10 +65,10 @@ Modern students, competitive exam aspirants (GATE, JEE, UPSC, GRE), and engineer
 * Flippable 3D cards with key takeaways and bullet points.
 * Cloud persistence under the user's MongoDB Atlas profile.
 
-### 6. 📊 GitHub-Style Contribution Heatmap & Command Center
-* **16-Week (112-Day) Contribution Grid**: Displays daily cognitive output across all modules with 5 color-intensity green levels.
-* **Velocity Metrics**: Real-time tracking of *Hours Studied This Week*, *Hours Last Week*, *Current Active Streak*, and *Recall Accuracy Rate*.
+### 6. 📊 Dashboard & Command Center
+* **Real-time Metrics**: Tracking of *Current Active Streak*, *Total Hours*, *Weekly Hours*, and AI-identified strengths/weaknesses.
 * **Cognitive Radar**: Aggregated list of confirmed strengths, priority weaknesses, and ranked daily action items.
+* **AI Tutor Integration**: Built-in Q&A system with markdown formatting support.
 
 ---
 
@@ -76,11 +76,11 @@ Modern students, competitive exam aspirants (GATE, JEE, UPSC, GRE), and engineer
 
 ```mermaid
 flowchart TB
-    subgraph Client["Next.js 15 Client Layer (Turbopack + React 19)"]
+    subgraph Client["Next.js 16 Client Layer (React 19)"]
         UI["Neo-Brutalist Command Center"]
-        MM["Memory Museum (Video Sync)"]
+        MM["Memory Palace (Canvas RPG)"]
         Map["React Flow Mind Map"]
-        Quiz["AI Quiz Arena (5-20 MCQs)"]
+        Quiz["AI Quiz Arena (5 MCQs)"]
         FC["Flashcards Deck Engine"]
     end
 
@@ -97,10 +97,9 @@ flowchart TB
 
     subgraph DB["MongoDB Atlas Cloud"]
         U[(Users)]
-        Q[(QuizAttempts)]
-        G[(MemoryMuseumGames)]
         F[(FlashcardDecks)]
         M[(MindMaps)]
+        T[(TutorSessions)]
     end
 
     Client <-->|REST API / Credentials| Server
@@ -115,12 +114,13 @@ flowchart TB
 
 | Layer | Technologies |
 | :--- | :--- |
-| **Frontend** | Next.js 15 (App Router), React 19, TypeScript, Vanilla CSS, Tailwind CSS v4 |
-| **Visual Graphing** | React Flow, Lucide React, Canvas API |
+| **Frontend** | Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS v4 |
+| **Visual Graphing** | @xyflow/react (React Flow), Canvas API |
 | **Backend** | Node.js, Express.js, Multer, PDF-Parse, Axios |
 | **Database** | MongoDB Atlas (Cloud Database), Mongoose ODM |
 | **AI / LLM** | Sarvam AI API (`sarvam-105b-conversations`), Custom Prompt Engineering |
-| **Auth & Security** | JWT, HttpOnly Cookies, Secure Session Fallbacks, CORS |
+| **Auth & Security** | JWT, HttpOnly Cookies, CORS |
+| **File Processing** | PDF-Parse, Tesseract.js, YouTube Transcript, Mammoth (DOCX), PPTX Parser |
 
 ---
 
@@ -159,9 +159,9 @@ node server.js
 # Backend runs on http://localhost:5000
 ```
 
-### 3. Frontend Setup (`Lumen`)
+### 3. Frontend Setup (`luman/Lumen`)
 ```bash
-cd ../Lumen
+cd ../luman/Lumen
 npm install
 ```
 
@@ -186,21 +186,17 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to experienc
 * `POST /api/auth/signup` — Register a new scholar profile
 * `POST /api/auth/login` — Authenticate and issue secure JWT
 * `GET /api/auth/me` — Retrieve active user session profile
+* `POST /api/auth/class` — Update user class selection
 
 ### 📊 Dashboard & Cognitive Analytics (`/api/dashboard`)
-* `GET /api/dashboard/stats` — Fetches streak, weekly hours, 112-day heatmap, and AI strengths/gaps
+* `GET /api/dashboard/stats` — Fetches streak, weekly hours, and AI strengths/gaps
 * `POST /api/dashboard/ask` — Instant Sarvam AI query answering with markdown highlights
 
-### ⚔️ Memory Museum (`/api/memory-museum`)
-* `POST /api/memory-museum/start` — Ingest materials and generate a 10-level combat campaign
-* `POST /api/memory-museum/verify-duel` — Submit level answers and determine win/loss
-* `POST /api/memory-museum/finish` — Synthesize post-game pedagogical diagnostics and persist to MongoDB
-* `GET /api/memory-museum/history` — Retrieve past battle logs and win/loss records
+### ⚔️ Memory Palace (`/api/memory-palace`)
+* `POST /api/memory-palace/generate` — Generate concepts and questions from text, YouTube URLs, or PDFs
 
 ### 🎯 Quiz Arena (`/api/quiz`)
-* `POST /api/quiz/generate` — Generate 5–20 MCQs from text prompt, YouTube URL, or PDF
-* `POST /api/quiz/submit` — Submit quiz attempt and generate personalized AI guidance
-* `GET /api/quiz/history` — Fetch user's quiz attempt analytics
+* `POST /api/quiz/generate` — Generate 5 MCQs from text topic
 
 ### 🗺️ Mind Map (`/api/mindmap`)
 * `POST /api/mindmap/generate` — Synthesize structured React Flow hierarchical graph data
@@ -209,6 +205,9 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to experienc
 ### 🗂️ Flashcards (`/api/flashcards`)
 * `POST /api/flashcards/generate` — Generate multi-level flashcard decks
 * `GET /api/flashcards/decks` — Fetch user's flashcard library
+
+### 🧠 AI Tutor (`/api/tutor`)
+* `POST /api/tutor/ask` — Ask questions to the AI tutor
 
 ---
 
@@ -221,7 +220,7 @@ LUMEN adopts a **Neo-Brutalist** visual identity that rejects sterile, boring mi
   * 🟩 **Electric Lime** (`#39FF14`): Quiz Arena, success states & peak heatmap intensity.
   * 🟦 **Vivid Cyan** (`#00FFFF`): Mind Map graph modules.
   * 🟪 **Hyper Magenta** (`#FF00FF`): AI Tutor & guidance modules.
-  * 🟧 **High-Output Orange** (`#FF4F00`): Memory Museum battle actions.
+  * 🟧 **High-Output Orange** (`#FF4F00`): Memory Palace battle actions.
   * ⬛ **Lumen Black** (`#000000`): High-contrast brutalist borders and typography.
 * **Tactile Physics**:
   * 3px to 4px hard borders.
@@ -236,8 +235,8 @@ LUMEN adopts a **Neo-Brutalist** visual identity that rejects sterile, boring mi
 ## 📈 Business Model & Sustainability
 
 1. **B2C Freemium Model**:
-   * **Free**: Daily prompt queries, standard 5-question quizzes, 3 museum chambers.
-   * **LUMEN Pro ($9.99/mo or ₹499/mo)**: Unlimited document/YouTube ingestion, 20-question deep quizzes, complete 10-level Memory Museum battles, and exportable diagnostics.
+   * **Free**: Daily prompt queries, standard 5-question quizzes, basic Memory Palace features.
+   * **LUMEN Pro ($9.99/mo or ₹499/mo)**: Unlimited document/YouTube ingestion, advanced features, and exportable diagnostics.
 2. **B2B Institutional SaaS**:
    * Licensing for universities, engineering colleges, and test-prep academies.
    * Educator Console to upload course syllabi and track cohort retention heatmaps.
@@ -249,7 +248,9 @@ LUMEN adopts a **Neo-Brutalist** visual identity that rejects sterile, boring mi
 
 ## 👥 Contributors
 
-* **Abhishek Mishra** — *Full-Stack Architecture, AI Pipeline & UI/UX Engineering*
+* **Aditya Banerjee** — *Frontend Development & UI Design, including animations and user experience*
+* **Aryan Fursule** — *Flashcards and Mind Maps development*
+* **Abhishek Mishra** — *MongoDB database design and complete backend infrastructure*
 
 ---
 
