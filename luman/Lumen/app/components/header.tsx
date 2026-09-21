@@ -16,21 +16,24 @@ export default async function Header() {
   }
 
   return (
-    <div className="w-full border-b-4 border-lumen-black bg-lumen-yellow sticky top-0 z-50">
-      <div className="grid grid-cols-12 gap-0">
-        {/* Left: Logo/Brand (8 columns) */}
-        <div className="col-span-8 border-r-4 border-lumen-black p-4 flex items-center">
-          <Link href="/" className="font-press-start text-sm hover:opacity-80 transition-opacity">
+    <div className="w-full border-b-4 border-lumen-black bg-white sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        {/* Left: Logo/Brand */}
+        <div className="flex items-center gap-2">
+          <div className="w-12 h-12 bg-gradient-to-br from-lumen-yellow to-lumen-orange border-4 border-lumen-black flex items-center justify-center shadow-brutalist">
+            <span className="font-press-start text-xl text-black font-black">L</span>
+          </div>
+          <Link href="/" className="font-press-start text-2xl text-black font-black hover:scale-105 transition-transform">
             LUMEN
           </Link>
         </div>
 
-        {/* Right: Auth Buttons (4 columns) */}
-        <div className="col-span-4 p-4 flex gap-4 items-center justify-end">
+        {/* Right: Auth Buttons */}
+        <div className="flex items-center gap-3">
           {user ? (
             <>
               {/* User Badge */}
-              <div className="font-press-start text-xs bg-lumen-black text-lumen-yellow px-3 py-2 border-2 border-lumen-black">
+              <div className="font-press-start text-xs bg-lumen-black text-lumen-yellow px-4 py-2 border-2 border-lumen-black shadow-brutalist">
                 [LVL {user.level || 1}] {user.username || "USER"}
               </div>
 
@@ -42,8 +45,7 @@ export default async function Header() {
               {/* Login Button */}
               <Link
                 href="/login?mode=login"
-                className="px-4 py-2 bg-black text-[#FFCC00] border-2 border-black font-press-start text-xs transition-all hover:bg-[#FFCC00] hover:text-black hover:translate-y-0.5 shadow-[2px_2px_0px_#000000]"
-                style={{ backgroundColor: "#000000", color: "#FFCC00", borderColor: "#000000" }}
+                className="px-6 py-2 bg-lumen-black text-lumen-yellow border-2 border-lumen-black font-press-start text-xs transition-all hover:bg-lumen-cyan hover:translate-x-1 hover:-translate-y-1 hover:shadow-lg shadow-brutalist"
               >
                 LOGIN
               </Link>
@@ -51,8 +53,7 @@ export default async function Header() {
               {/* Signup Button */}
               <Link
                 href="/login?mode=signup"
-                className="px-4 py-2 bg-[#FFCC00] text-black border-2 border-black font-press-start text-xs transition-all shadow-[3px_3px_0px_#000000] hover:bg-black hover:text-[#FFCC00] hover:translate-y-0.5"
-                style={{ backgroundColor: "#FFCC00", color: "#000000", borderColor: "#000000" }}
+                className="px-6 py-2 bg-lumen-yellow text-black border-2 border-lumen-black font-press-start text-xs transition-all hover:bg-lumen-cyan hover:translate-x-1 hover:-translate-y-1 hover:shadow-lg shadow-brutalist"
               >
                 SIGNUP
               </Link>

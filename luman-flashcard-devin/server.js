@@ -21,6 +21,12 @@ app.use(cors({
 app.use(express.json({ limit: '25mb' }));
 app.use(express.urlencoded({ extended: true, limit: '25mb' }));
 
+// Quiz specific middleware
+app.use('/api/quiz', express.json({ limit: '25mb' }));
+
+// Memory palace specific middleware
+app.use('/api/memory-palace', express.json({ limit: '25mb' }));
+
 // Serve static demo UI if requested directly
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -39,6 +45,7 @@ app.get('/', (req, res) => {
       flashcards: '/api/flashcards',
       tutor: '/api/tutor',
       auth: '/api/auth',
+      dashboard: '/api/dashboard/stats',
     },
   });
 });

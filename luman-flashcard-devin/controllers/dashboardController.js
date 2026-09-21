@@ -1,29 +1,19 @@
-const express = require('express');
-const router = express.Router();
+const axios = require('axios');
+const { resolveUserId } = require('../utils/authHelper');
 
-const authRoutes = require('./authRoutes');
-const flashcardRoutes = require('./flashcardRoutes');
-const tutorRoutes = require('./tutorRoutes');
-const mindmapRoutes = require('./mindmapRoutes');
-const { generateMemoryPalace } = require('../controllers/memoryPalaceController');
-const { generateQuiz } = require('../controllers/quizController');
+const SARVAM_API_URL = process.env.SARVAM_API_URL || 'https://api.sarvam.ai/v1/chat/completions';
+const SARVAM_MODEL = process.env.SARVAM_MODEL || 'sarvam-105b-conversations';
+const SARVAM_AI_API_KEY = process.env.SARVAM_AI_API_KEY;
 
-// Active Feature Modules
-router.use('/auth', authRoutes);
-router.use('/flashcards', flashcardRoutes);
-router.use('/tutor', tutorRoutes);
-router.use('/mindmap', mindmapRoutes);
-router.use('/upload-pdf', mindmapRoutes); // Direct root compatibility alias for lomen-mindmap
-router.use('/quiz', require('./quizRoutes'));
-
-// Memory Palace routes
-router.post('/memory-palace/generate', generateMemoryPalace);
-
-// Dashboard routes
-router.get('/dashboard/stats', async (req, res) => {
+/**
+ * Get dashboard statistics including streak, study hours, strengths, weaknesses
+ */
+const getDashboardStats = async (req, res) => {
   try {
+    const userId = resolveUserId(req);
+    
+    // Mock data for now - in production, this would come from MongoDB
     const stats = {
-      success: true,
       currentStreak: 5,
       totalHours: 48,
       weeklyHours: 12,
@@ -43,7 +33,18 @@ router.get('/dashboard/stats', async (req, res) => {
         'Work on time management'
       ]
     };
-    res.json(stats);
+
+    // If user is logged in, you could fetch their actual data from MongoDB
+    if (userId) {
+      // TODO: Implement actual data fetching from MongoDB
+      // const user = await User.findById(userId);
+      // Update stats with real user data
+    }
+
+    res.json({
+      success: true,
+      ...stats
+    });
   } catch (error) {
     console.error('Dashboard stats error:', error);
     res.status(500).json({
@@ -51,9 +52,12 @@ router.get('/dashboard/stats', async (req, res) => {
       error: 'Failed to fetch dashboard stats'
     });
   }
-});
+};
 
-router.post('/dashboard/ask', async (req, res) => {
+/**
+ * Ask a question to the AI tutor using Sarvam AI
+ */
+const askQuestion = async (req, res) => {
   try {
     const { question } = req.body;
     
@@ -64,10 +68,6 @@ router.post('/dashboard/ask', async (req, res) => {
       });
     }
 
-    const SARVAM_API_URL = process.env.SARVAM_API_URL || 'https://api.sarvam.ai/v1/chat/completions';
-    const SARVAM_MODEL = process.env.SARVAM_MODEL || 'sarvam-105b-conversations';
-    const SARVAM_AI_API_KEY = process.env.SARVAM_AI_API_KEY;
-
     if (!SARVAM_AI_API_KEY || SARVAM_AI_API_KEY === 'your_sarvam_ai_api_key_here') {
       // Fallback response if API key is not configured
       return res.json({
@@ -76,13 +76,12 @@ router.post('/dashboard/ask', async (req, res) => {
       });
     }
 
-    const axios = require('axios');
     const response = await axios.post(SARVAM_API_URL, {
       model: SARVAM_MODEL,
       messages: [
         {
           role: 'system',
-          content: 'You are a helpful AI study assistant. Provide clear, concise, and educational responses to help students learn effectively. Use examples and explanations that make complex topics easier to understand. Focus on being practical and actionable.'
+          content: 'You are a helpful AI study assistant. Provide clear, concise, and educational responses to help students learn effectively. Use examples and explanations that make complex topics easier to understand.'
         },
         {
           role: 'user',
@@ -113,30 +112,9 @@ router.post('/dashboard/ask', async (req, res) => {
       answer: `I encountered an error while processing your question: "${question}"\n\nError details: ${error.message}\n\nPlease try again or check your API configuration.`
     });
   }
-});
+};
 
-// Health & System Info
-router.get('/health', (req, res) => {
-  const dbStatus = require('../config/db').isConnected();
-  const hasSarvam = Boolean(process.env.SARVAM_AI_API_KEY && process.env.SARVAM_AI_API_KEY !== 'your_sarvam_ai_api_key_here');
-
-  res.json({
-    status: 'online',
-    message: 'Luman AI Backend API is operational',
-    database: {
-      type: 'MongoDB',
-      connected: dbStatus,
-    },
-    features: {
-      flashcards: 'active',
-      mindmap: 'active',
-      tutor: 'active',
-      auth: 'active',
-      quiz: 'active',
-      memory_palace: 'active',
-    },
-    sarvamConfigured: hasSarvam,
-  });
-});
-
-module.exports = router;
+module.exports = {
+  getDashboardStats,
+  askQuestion
+};
